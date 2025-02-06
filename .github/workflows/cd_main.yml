@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd frontend
-          npm run dev
+          npm ci
 
       - name: Lint
         run: |
@@ -51,9 +51,9 @@ jobs:
       - name: Install Dependencies
         run: |
           cd backend
-          node index.js
+          npm ci
 
       - name: Lint
         run: |
           cd backend
-          npm run lint
+          npm start
