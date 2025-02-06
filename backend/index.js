@@ -11,34 +11,34 @@ app.get('/',(req,res)=>{
     res.send('Hello World!');
 })
 
-const db=mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database: "test"
-})
+// const db=mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:"",
+//     database: "test"
+// })
 
-db.connect((err)=>{
-    if(err){
-        console.log(err);
-    }else{
-        console.log("connected");
-    }
-})
+// db.connect((err)=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("connected");
+//     }
+// })
 
 app.post('/users',(req,res)=>{
     const {id,name}=req.body;
     
     const query='insert into student values(?,?)';
-    db.query(query,[id,name],(err,result)=>{
-        if(err){
-            console.log(err);
-            return res.send(400);
-        }else{
-            console.log(result);
-            return res.send(200);
-        }
-    })
+    // db.query(query,[id,name],(err,result)=>{
+    //     if(err){
+    //         console.log(err);
+    //         return res.send(400);
+    //     }else{
+    //         console.log(result);
+    //         return res.send(200);
+    //     }
+    // })
 })
 
 app.listen(8000,()=>{
